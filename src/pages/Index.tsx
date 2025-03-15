@@ -28,7 +28,7 @@ const Index = () => {
       <div className="min-h-screen overflow-hidden">
         <Navbar />
         <FloralElements />
-        <main className="space-y-12 md:space-y-16">
+        <main className="space-y-4 md:space-y-6">
           <HeroSection />
           <EventDetails />
           <VenueMap />

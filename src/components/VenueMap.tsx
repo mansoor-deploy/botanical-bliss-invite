@@ -26,13 +26,13 @@ const VenueMap = () => {
     >
       <div className="container max-w-5xl mx-auto px-4">
         <h2 className={cn(
-          "section-title font-playfair text-floral-gold",
+          "section-title font-playfair text-floral-gold mb-4", // Reduced margin bottom
           isInView ? "animate-slide-down" : "opacity-0"
         )}>
           Venue Details
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-6 items-center"> {/* Reduced gap */}
           <div className={cn(
             "glass-card rounded-lg overflow-hidden shadow-lg",
             isInView ? "animate-slide-up animate-delay-200" : "opacity-0"
@@ -46,7 +46,7 @@ const VenueMap = () => {
           </div>
           
           <div className={cn(
-            "space-y-6",
+            "space-y-4", // Reduced space-y
             isInView ? "animate-slide-up animate-delay-300" : "opacity-0"
           )}>
             <div className="glass-card p-6 rounded-lg">
