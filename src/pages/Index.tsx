@@ -24,7 +24,7 @@ const Index = () => {
   
   return (
     <InvitationProvider>
-      <div className="no-js-opacity min-h-screen">
+      <div className="min-h-screen">
         <Navbar />
         <FloralElements />
         <main>
