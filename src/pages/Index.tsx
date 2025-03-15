@@ -1,13 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import { InvitationProvider } from '@/context/InvitationContext';
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import EventDetails from '@/components/EventDetails';
+import VenueMap from '@/components/VenueMap';
+import RsvpForm from '@/components/RsvpForm';
+import MusicPlayer from '@/components/MusicPlayer';
+import FloralElements from '@/components/FloralElements';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  // Add a class to body when JavaScript is loaded
+  useEffect(() => {
+    document.body.classList.add('js-loaded');
+    document.body.classList.add('bg-texture');
+    
+    return () => {
+      document.body.classList.remove('js-loaded');
+      document.body.classList.remove('bg-texture');
+    };
+  }, []);
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <InvitationProvider>
+      <div className="no-js-opacity min-h-screen">
+        <Navbar />
+        <FloralElements />
+        <main>
+          <HeroSection />
+          <EventDetails />
+          <VenueMap />
+          <RsvpForm />
+        </main>
+        <Footer />
+        <MusicPlayer />
       </div>
-    </div>
+    </InvitationProvider>
   );
 };
 

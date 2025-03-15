@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+                // Custom colors for our floral theme
+                floral: {
+                    blush: '#FFDEE2',
+                    mint: '#F2FCE2',
+                    beige: '#FDE1D3',
+                    gold: '#D4AF37',
+                    softGray: '#F1F0FB'
+                },
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,12 +93,51 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                // Custom animations
+                'fade-in': {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' }
+                },
+                'slide-up': {
+                    '0%': { transform: 'translateY(20px)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' }
+                },
+                'slide-down': {
+                    '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' }
+                },
+                'float': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' }
+                },
+                'pulse-subtle': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.8' }
+                },
+                'rotate-slow': {
+                    '0%': { transform: 'rotate(0deg)' },
+                    '100%': { transform: 'rotate(360deg)' }
+                },
+                'blur-in': {
+                    '0%': { filter: 'blur(5px)', opacity: '0' },
+                    '100%': { filter: 'blur(0)', opacity: '1' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 0.7s ease-out forwards',
+                'slide-up': 'slide-up 0.7s ease-out forwards',
+                'slide-down': 'slide-down 0.7s ease-out forwards',
+                'float': 'float 6s ease-in-out infinite',
+                'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
+                'rotate-slow': 'rotate-slow 20s linear infinite',
+                'blur-in': 'blur-in 0.7s ease-out forwards'
+			},
+            backgroundImage: {
+                'floral-pattern': "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=500&auto=format&fit=crop')",
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
