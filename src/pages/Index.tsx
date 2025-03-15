@@ -9,6 +9,7 @@ import RsvpForm from '@/components/RsvpForm';
 import MusicPlayer from '@/components/MusicPlayer';
 import FloralElements from '@/components/FloralElements';
 import Footer from '@/components/Footer';
+import VideoInvitation from '@/components/VideoInvitation';
 
 const Index = () => {
   // Add a class to body when JavaScript is loaded
@@ -24,10 +25,10 @@ const Index = () => {
   
   return (
     <InvitationProvider>
-      <div className="min-h-screen">
+      <div className="min-h-screen overflow-hidden">
         <Navbar />
         <FloralElements />
-        <main>
+        <main className="space-y-12 md:space-y-16">
           <HeroSection />
           <EventDetails />
           <VenueMap />
@@ -35,6 +36,7 @@ const Index = () => {
         </main>
         <Footer />
         <MusicPlayer />
+        <VideoInvitation />
       </div>
     </InvitationProvider>
   );

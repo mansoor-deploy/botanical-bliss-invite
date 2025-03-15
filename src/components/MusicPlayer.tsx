@@ -49,10 +49,10 @@ const MusicPlayer = () => {
     <button
       onClick={toggleMusic}
       className={cn(
-        "fixed bottom-6 right-6 z-50 p-3 rounded-full transition-all duration-300 shadow-md shadow-black/10 backdrop-blur-sm",
+        "fixed bottom-6 right-6 z-50 p-3 rounded-full transition-all duration-300 shadow-lg shadow-black/20 backdrop-blur-sm",
         musicPlaying 
-          ? "bg-floral-blush/80 hover:bg-floral-blush" 
-          : "bg-floral-softGray/80 hover:bg-floral-softGray"
+          ? "bg-floral-blush hover:bg-floral-blush/80" 
+          : "bg-floral-softGray hover:bg-floral-softGray/80"
       )}
       aria-label={musicPlaying ? "Mute music" : "Play music"}
     >
