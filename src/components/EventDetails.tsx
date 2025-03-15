@@ -4,6 +4,7 @@ import { useInvitation } from '@/context/InvitationContext';
 import { Calendar, Clock, Gift, Music, Utensils } from 'lucide-react';
 import { useInViewAnimation } from '@/lib/animations';
 import { cn } from '@/lib/utils';
+import GoogleCalendarButton from './GoogleCalendarButton';
 
 const EventDetails = () => {
   const { celebrantName, celebrantAge, eventDate, eventTime } = useInvitation();
@@ -73,7 +74,7 @@ const EventDetails = () => {
             <div 
               key={index}
               className={cn(
-                "glass-card p-6 rounded-lg text-center transition-all hover:shadow-md",
+                "glass-card p-6 rounded-lg text-center transition-all hover:shadow-xl",
                 isInView ? `animate-slide-up animate-delay-${(index + 2) * 100}` : "opacity-0"
               )}
             >
@@ -93,9 +94,13 @@ const EventDetails = () => {
           isInView ? "animate-slide-up animate-delay-500" : "opacity-0"
         )}>
           <h3 className="text-xl font-medium mb-4 font-playfair">Dress Code</h3>
-          <p className="text-gray-600 max-w-xl mx-auto">
+          <p className="text-gray-600 max-w-xl mx-auto mb-8">
             Garden party elegant. We recommend cocktail attire in spring/floral colors.
           </p>
+          
+          <div className="flex justify-center">
+            <GoogleCalendarButton />
+          </div>
         </div>
       </div>
     </section>

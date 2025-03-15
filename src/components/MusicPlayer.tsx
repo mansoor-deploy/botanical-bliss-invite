@@ -12,8 +12,8 @@ const MusicPlayer = () => {
     // Create audio element
     if (!audioRef.current) {
       audioRef.current = new Audio();
-      // Use a gentle background music (placeholder URL - you would replace with actual music file)
-      audioRef.current.src = 'https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=peaceful-garden-healing-light-piano-for-meditation-yoga-spa-relaxation-131451.mp3';
+      // Use one of the SoundHelix sample tracks
+      audioRef.current.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
       audioRef.current.loop = true;
       audioRef.current.volume = 0.3;
     }
@@ -49,7 +49,7 @@ const MusicPlayer = () => {
     <button
       onClick={toggleMusic}
       className={cn(
-        "fixed bottom-6 right-6 z-50 p-3 rounded-full transition-all duration-300 shadow-md backdrop-blur-sm",
+        "fixed bottom-6 right-6 z-50 p-3 rounded-full transition-all duration-300 shadow-md shadow-black/10 backdrop-blur-sm",
         musicPlaying 
           ? "bg-floral-blush/80 hover:bg-floral-blush" 
           : "bg-floral-softGray/80 hover:bg-floral-softGray"
